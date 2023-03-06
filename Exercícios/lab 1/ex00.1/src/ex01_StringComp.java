@@ -1,22 +1,28 @@
 public class ex01_StringComp
 {
+
     public static Boolean stringComp(String string1, String string2)
     {
-        Boolean ok = true;
-
-        if (stringComp(string1, string2))
+        if (string1.equals(string2))
         {
-            return ok;
+            return true;
         }
-        else if (string1.length() > string2.length())
+        else
         {
-            int i = string1.length(), j = string2.length();
+            int i = string1.length() - 1, j = string2.length() - 1;
 
-            while(i < 0 && j < 0)
+            while(i >= 0 && j >= 0)
             {
+                if (string1.charAt(i) != string2.charAt(j)) {
+                    return false;
+                }
 
+                i--;
+                j--;
             }
-        }
 
+            return true;
+        }
     }
 }
+
