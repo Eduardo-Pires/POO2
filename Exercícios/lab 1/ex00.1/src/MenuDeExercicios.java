@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 public class MenuDeExercicios {
 
@@ -9,7 +10,7 @@ public class MenuDeExercicios {
         {
             case 0:
                 System.exit(0);
-            break;
+                break;
             case 1:
                 System.out.println();
 
@@ -19,7 +20,7 @@ public class MenuDeExercicios {
                 System.out.print("Segunda string: ");
                 String string2 = scanf.nextLine();
 
-                if (ex01_StringComp.stringComp(string1, string2))
+                if (EX01.stringComp(string1, string2))
                 {
                     System.out.println("a primeira termina com os caracteres da segunda");
                 }
@@ -27,12 +28,29 @@ public class MenuDeExercicios {
                 {
                     System.out.println("a primeira não termina com os caracteres da segunda");
                 }
+
                 continuar();
-                break;
+            break;
             case 2:
+                System.out.print("Entre com a string: ");
+                String str = scanf.nextLine();
+                HashMap<Character, Integer> map = EX02.charCount(str);
 
+                for (Character key: map.keySet())
+                {
+                    System.out.print("[" + key + ":" + map.get(key) + "] ");
+                }
+                System.out.println();
 
-                break;
+                continuar();
+            break;
+            case 3:
+                EX03.quenteFrio();
+                continuar();
+            break;
+            case 49:
+                
+            break;
             default:
                 throw new IllegalStateException("Unexpected value: " + option);
         }

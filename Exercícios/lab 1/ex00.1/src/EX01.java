@@ -1,4 +1,4 @@
-public class ex01_StringComp
+public class EX01
 {
 
     public static Boolean stringComp(String string1, String string2)
