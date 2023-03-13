@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
 
-public abstract class Atleta implements Comparable<Atleta>{
+public abstract class Atleta implements Comparable<Atleta[]> implements Comparable<arraylist<Atleta>>
+        {
     private String nome;
     private int idade;
     private float peso;
@@ -93,7 +94,7 @@ public abstract class Atleta implements Comparable<Atleta>{
     }
 
     @Override
-    public int compareTo(Atleta o) {
+    public int compareTo(Atleta[] o) {
         return 0;
     }
 
