@@ -3,8 +3,9 @@ package EX04to09;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
+import java.util.ArrayList;
 
-public abstract class Atleta implements Comparable<Atleta[]> implements Comparable<arraylist<Atleta>>
+public abstract class Atleta implements Comparable<Atleta[]>
         {
     private String nome;
     private int idade;
