@@ -5,7 +5,7 @@ import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
 import java.util.ArrayList;
 
-public abstract class Atleta implements Comparable<Atleta[]>
+public abstract class Atleta
         {
     private String nome;
     private int idade;
@@ -60,8 +60,6 @@ public abstract class Atleta implements Comparable<Atleta[]>
 
     }
 
-
-
     public String getNome() {
         return nome;
     }
@@ -94,10 +92,7 @@ public abstract class Atleta implements Comparable<Atleta[]>
         this.altura = altura;
     }
 
-    @Override
-    public int compareTo(Atleta[] o) {
-        return 0;
-    }
+
 
     @Override
     public String toString() {

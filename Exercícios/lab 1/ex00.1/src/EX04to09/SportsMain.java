@@ -2,16 +2,18 @@ package EX04to09;
 
 import java.util.ArrayList;
 
-public class SportsMain
+public class SportsMain implements Comparable<Object>
 {
     public static void main(String[] args) {
         int max = 30, min = 1;
         int random;
 
         Atleta[] atletasGD = new Atleta[3];
+
         atletasGD[0] = new Corredor("Fabio de Melo", 18, 70,1.70f);
         atletasGD[1] = new Futebolista("Marcelo Rossi", 40, 85, 1.90f);
         atletasGD[2] = new Tenista("Edir Macedo", 21, 85.3f, 1.5f);
+
 
         for (int i = 0; i < atletasGD.length; i++)
         {
@@ -34,5 +36,12 @@ public class SportsMain
         }
 
         Atleta.calcularProximaOlimpiada();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+
+        o.getClass().isArray();
+        return 0;
     }
 }
