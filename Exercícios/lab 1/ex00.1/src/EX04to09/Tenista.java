@@ -10,4 +10,5 @@ public class Tenista extends Atleta
     public void jogar() {
         System.out.println("Jogando tênis");
     }
+
 }

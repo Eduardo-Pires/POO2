@@ -1,10 +1,17 @@
 package EX04to09;
 
-public abstract class Atleta {
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
+import java.util.Date;
+
+public abstract class Atleta implements Comparable<Atleta>{
     private String nome;
     private int idade;
     private float peso;
     private float altura;
+    private LocalDate d;
+    static Date d1 = new Date(2024, 07, 16);
+    static Date d2 = new Date();
 
     public Atleta(String nome, int idade, float peso, float altura) {
         this.nome = nome;
@@ -42,6 +49,17 @@ public abstract class Atleta {
 
     public abstract void jogar();
 
+    public static Date calcularProximaOlimpiada()
+    {
+        long tempoA = d1.getTime() - d2.getTime();
+        long tempo = tempoA/ (1000 * 60 * 60 * 24);
+        System.out.println("Faltam " +  tempo +" dias para a próxima olimpíada");
+        return d2;
+
+    }
+
+
+
     public String getNome() {
         return nome;
     }
@@ -72,6 +90,11 @@ public abstract class Atleta {
 
     public void setAltura(float altura) {
         this.altura = altura;
+    }
+
+    @Override
+    public int compareTo(Atleta o) {
+        return 0;
     }
 
     @Override
