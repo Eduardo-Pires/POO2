@@ -1,3 +1,5 @@
+package EX01to03;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -25,7 +27,7 @@ public class Main {
     {
         scanf.nextLine();
         switch (option) {
-            //case 0 -> System.exit(0);
+            case 0 -> System.exit(0);
             case 1 -> {
                 System.out.println();
                 System.out.print("Primeira string: ");
@@ -53,7 +55,7 @@ public class Main {
                 EX03.quenteFrio();
                 continuar(scanf);
             }
-            default -> throw new IllegalStateException("Unexpected value: " + option);
+            default -> throw new IllegalStateException("Valor Inesperado: " + option);
         }
 
 
@@ -61,12 +63,16 @@ public class Main {
 
     public static void continuar(Scanner scanf)
     {
-        System.out.println("Continuar? (tecle - sim ou não)");
+        System.out.println("Continuar? (digite - sim ou não)");
         String resposta = scanf.nextLine();
 
         if (resposta.equalsIgnoreCase("não"))
         {
             System.exit(0);
+        }
+        else
+        {
+            throw new IllegalStateException("resposta inesperada: " + resposta);
         }
     }
 

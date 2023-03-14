@@ -1,3 +1,5 @@
+package EX01to03;
+
 public class EX01
 {
 

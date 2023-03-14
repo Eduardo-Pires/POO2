@@ -1,23 +1,17 @@
 package EX04to09;
 
 import java.time.LocalDate;
-<<<<<<< Updated upstream
-import java.time.chrono.ChronoLocalDate;
-import java.util.Date;
-import java.util.ArrayList;
-=======
 import java.time.temporal.ChronoUnit;
 
->>>>>>> Stashed changes
 
-public abstract class Atleta
-        {
+public abstract class Atleta implements Comparable<Atleta>
+{
     private String nome;
     private int idade;
     private float peso;
     private float altura;
-    static LocalDate d1 = LocalDate.of(2024, 07, 16);
-    static LocalDate d2 = LocalDate.now();
+    static LocalDate dataProximaOlimpiada = LocalDate.of(2024, 7, 16);
+    static LocalDate dataAtual = LocalDate.now();
 
     public Atleta(String nome, int idade, float peso, float altura) {
         this.nome = nome;
@@ -57,10 +51,10 @@ public abstract class Atleta
 
     public static LocalDate calcularProximaOlimpiada()
     {
-        long tempo = ChronoUnit.DAYS.between(d2, d1);
-        System.out.println("Faltam " +  tempo +" dias para a próxima olimpíada");
-        return d1;
+        long diasParaOlimpiada = ChronoUnit.DAYS.between(dataAtual, dataProximaOlimpiada);
+        System.out.println("Faltam " +  diasParaOlimpiada +" dias para a próxima olimpíada");
 
+        return dataProximaOlimpiada;
     }
 
     public String getNome() {
@@ -95,8 +89,6 @@ public abstract class Atleta
         this.altura = altura;
     }
 
-
-
     @Override
     public String toString() {
         return "Atleta{" +
@@ -105,5 +97,10 @@ public abstract class Atleta
                 ", peso=" + peso +
                 ", altura=" + altura +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Atleta o) {
+        return this.nome.compareTo(o.getNome());
     }
 }
