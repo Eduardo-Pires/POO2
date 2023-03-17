@@ -2,12 +2,13 @@ import java.io.*;
 import java.util.Scanner;
 
 
-public class ex01 extends Thread
+public class EX01 extends Thread
 {
 
     String fileS;
+    int final_Counter;
 
-    public ex01(String fileS) {
+    public EX01(String fileS) {
         this.fileS = fileS;
     }
 
@@ -28,8 +29,9 @@ public class ex01 extends Thread
                 string = leitorB.readLine();
             }
             leitor.close();
-
+            Counting.incrementCounter(counter);
             System.out.println(counter);
+
         }
         catch (FileNotFoundException err)
         {
@@ -40,4 +42,6 @@ public class ex01 extends Thread
             System.out.println("problemas");
         }
     }
+
+
 }
