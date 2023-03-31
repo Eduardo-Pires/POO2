@@ -1,12 +1,18 @@
 public class HyundaiFactory implements CarroFactory{
+
     @Override
-    public Motor criarMotor(String marca, int consumoCombustivel, int potencia) {
-        return new Motor(marca, consumoCombustivel, potencia);
+    public Motor criarMotor(int consumoCombustivel, int potencia) {
+        return new MotorHyundai(consumoCombustivel, potencia);
     }
 
     @Override
-    public Carro criarCarro(Motor motor, Acessorio roda, Acessorio airbag, Acessorio camera, Acessorio vidroEletrico, Acessorio kitMultimidia, Acessorio caixaDeSom) {
-        return new Carro(motor, roda, airbag, camera, vidroEletrico, kitMultimidia, caixaDeSom);
+    public Acessorio criarAcessorio(String tipo, int quantidade) {
+        return new AcessorioHyundai(tipo, quantidade);
+    }
+
+    @Override
+    public Carro criarCarro(Motor motor, Acessorio acessorio) {
+        return new HB20(motor, acessorio);
     }
 
 }

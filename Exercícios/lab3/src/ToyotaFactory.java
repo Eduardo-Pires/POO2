@@ -1,11 +1,16 @@
 public class ToyotaFactory implements CarroFactory{
     @Override
-    public Motor criarMotor(String marca, int consumoCombustivel, int potencia) {
-        return new Motor(marca, consumoCombustivel, potencia);
+    public Acessorio criarAcessorio(String tipo, int quantidade) {
+        return new AcessorioToyota(tipo, quantidade);
     }
 
     @Override
-    public Carro criarCarro(Motor motor, Acessorio roda, Acessorio airbag, Acessorio camera, Acessorio vidroEletrico, Acessorio kitMultimidia, Acessorio caixaDeSom) {
-        return new Carro(motor, roda, airbag, camera, vidroEletrico, kitMultimidia, caixaDeSom);
+    public Motor criarMotor(int consumoCombustivel, int potencia) {
+        return new MotorToyota(consumoCombustivel, potencia);
+    }
+
+    @Override
+    public Carro criarCarro(Motor motor, Acessorio acessorio) {
+        return new Corolla(motor, acessorio);
     }
 }
