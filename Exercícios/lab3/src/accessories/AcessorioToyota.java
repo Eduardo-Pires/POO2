@@ -1,6 +1,8 @@
+package accessories;
+
 public class AcessorioToyota implements Acessorio{
-    private String tipo;
-    private int quantidade;
+    private final String tipo;
+    private final int quantidade;
 
     public AcessorioToyota(String tipo, int quantidade) {
         this.tipo = tipo;
@@ -9,12 +11,12 @@ public class AcessorioToyota implements Acessorio{
 
     @Override
     public String getTipo() {
-        return null;
+        return tipo;
     }
 
     @Override
     public int getQuantidade() {
-        return 0;
+        return quantidade;
     }
 
 }

@@ -1,6 +1,8 @@
+package accessories;
+
 public class AcessorioHyundai implements Acessorio{
-    private String tipo;
-    private int quantidade;
+    private final String tipo;
+    private final int quantidade;
 
     public AcessorioHyundai(String tipo, int quantidade) {
         this.tipo = tipo;
@@ -9,11 +11,11 @@ public class AcessorioHyundai implements Acessorio{
 
     @Override
     public String getTipo() {
-        return null;
+        return tipo;
     }
 
     @Override
     public int getQuantidade() {
-        return 0;
+        return quantidade;
     }
 }
