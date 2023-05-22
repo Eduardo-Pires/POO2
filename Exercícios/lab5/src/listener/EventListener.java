@@ -1,7 +1,5 @@
 package listener;
 
-import java.io.File;
-
 public interface EventListener {
-    void update();
+    public void update(float temperatura, float umidade, float chuva, float velocidadeVento);
 }
